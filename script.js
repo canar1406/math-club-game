@@ -33,7 +33,7 @@ let gameState = {
 // Correct answers
 const correctAnswers = {
     q1: { x: 125, y: 35 },
-    q2: { r: 5.23, h: 5.00, tolerance: 0.1 }, // Allow some tolerance
+    q2: { r: 4.25, h: 8.11, tolerance: 0.1 }, // Allow some tolerance
     q3a: 5,
     q3b: [1, 5],
     q4: [
@@ -455,6 +455,11 @@ function updateLettersDisplay() {
 
 // Check answer for each question
 function checkAnswer(questionNum) {
+    // Convert to number if string
+    if (typeof questionNum === 'string' && questionNum !== '3a' && questionNum !== '3b') {
+        questionNum = parseInt(questionNum);
+    }
+    
     // Handle special case for 3a and 3b with hyphen
     let resultId;
     if (questionNum === '3a') {
@@ -467,7 +472,20 @@ function checkAnswer(questionNum) {
     const resultDiv = document.getElementById(resultId);
     
     if (questionNum === 1) {
-        const answer = document.getElementById('answer-1').value.trim();
+        const answerInput = document.getElementById('answer-1');
+        if (!answerInput) {
+            console.error('Input not found: answer-1');
+            return;
+        }
+        
+        // Get value and clean it thoroughly
+        const answer = answerInput.value.trim().replace(/\s+/g, '');
+        
+        if (!answer) {
+            showIncorrectResult(resultDiv, '⚠️ Vui lòng nhập đáp án!');
+            return;
+        }
+        
         // Remove parentheses if present
         const cleanAnswer = answer.replace(/[()]/g, '');
         const parts = cleanAnswer.split(',').map(p => parseInt(p.trim()));
@@ -479,8 +497,24 @@ function checkAnswer(questionNum) {
         }
     }
     else if (questionNum === 2) {
-        const r = parseFloat(document.getElementById('answer-2-r').value.trim());
-        const h = parseFloat(document.getElementById('answer-2-h').value.trim());
+        const rInput = document.getElementById('answer-2-r');
+        const hInput = document.getElementById('answer-2-h');
+        
+        if (!rInput || !hInput) {
+            console.error('Input not found for question 2');
+            return;
+        }
+        
+        const rValue = rInput.value.trim();
+        const hValue = hInput.value.trim();
+        
+        if (!rValue || !hValue) {
+            showIncorrectResult(resultDiv, '⚠️ Vui lòng nhập cả r và h!');
+            return;
+        }
+        
+        const r = parseFloat(rValue);
+        const h = parseFloat(hValue);
         
         // Check if values are close enough to correct answer
         const rCorrect = Math.abs(r - correctAnswers.q2.r) <= correctAnswers.q2.tolerance;
@@ -493,7 +527,20 @@ function checkAnswer(questionNum) {
         }
     }
     else if (questionNum === '3a') {
-        const answer = parseFloat(document.getElementById('answer-3-a').value.trim());
+        const answerInput = document.getElementById('answer-3-a');
+        if (!answerInput) {
+            console.error('Input not found: answer-3-a');
+            return;
+        }
+        
+        const answerValue = answerInput.value.trim();
+        
+        if (!answerValue) {
+            showIncorrectResult(resultDiv, '⚠️ Vui lòng nhập đáp án!');
+            return;
+        }
+        
+        const answer = parseFloat(answerValue);
         
         if (answer === correctAnswers.q3a) {
             resultDiv.className = 'result correct';
@@ -505,7 +552,19 @@ function checkAnswer(questionNum) {
         }
     }
     else if (questionNum === '3b') {
-        const answer = document.getElementById('answer-3-b').value.trim();
+        const answerInput = document.getElementById('answer-3-b');
+        if (!answerInput) {
+            console.error('Input not found: answer-3-b');
+            return;
+        }
+        
+        const answer = answerInput.value.trim();
+        
+        if (!answer) {
+            showIncorrectResult(resultDiv, '⚠️ Vui lòng nhập đáp án!');
+            return;
+        }
+        
         const parts = answer.split(',').map(p => parseFloat(p.trim())).sort((a, b) => a - b);
         
         if (parts.length === 2 && parts[0] === correctAnswers.q3b[0] && parts[1] === correctAnswers.q3b[1]) {
@@ -945,3 +1004,16 @@ function clearPlayersData() {
         }
     }
 }
+
+// Clear all input values on page load to prevent cached values
+window.addEventListener('DOMContentLoaded', function() {
+    // Clear all answer inputs
+    const answerInputs = document.querySelectorAll('input[type="text"]:not(#player-name):not(#player-email):not(#player-class):not(#final-password)');
+    answerInputs.forEach(input => {
+        input.value = '';
+    });
+    
+    if (CONFIG.DEBUG_MODE) {
+        console.log('✅ Cleared all answer input values');
+    }
+});

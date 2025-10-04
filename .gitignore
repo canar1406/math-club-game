@@ -1,0 +1,26 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore log files
+*.log
+npm-debug.log*
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore config file with sensitive data
+config.js
+
+# Ignore player data files (nếu không muốn commit)
+# player_*.json
+# all_players_*.json

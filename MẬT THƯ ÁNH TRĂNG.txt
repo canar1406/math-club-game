@@ -1,0 +1,88 @@
+﻿MẬT THƯ ÁNH TRĂNG
+1. MỤC TIÊU
+Đứng trước tình cảnh nhiều học sinh dần sinh ra cảm giác chán chường trước các bài toán hóc búa và khô khan, chúng ta cần thay đổi cách thức ra đề để tăng sự thú vị như thêm các yếu tố giải mã, logic, ghép chữ cái,... nên trò chơi được tạo ra với mục tiêu nhằm mang lại một hình thức học tập và giải trí mới mẻ. Trò chơi không chỉ hướng đến việc tạo ra sự hứng thú cho người chơi mà còn khéo léo lồng ghép các yếu tố toán học thông qua những câu đố, mật thư và thử thách suy luận logic. Từ đó, người chơi vừa được rèn luyện tư duy toán học, vừa có cơ hội khám phá, giải mã trong một bầu không khí sinh động, huyền ảo gắn với sắc màu Trung thu. 
+2. Tóm tắt ý tưởng
+Mật thư ánh trăng là trò chơi giải mã huyền ảo, nơi người chơi bước vào hành trình khám phá những bí ẩn ẩn giấu sau các câu đố logic và mật thư cổ. Mỗi thử thách mở ra một manh mối mới, dẫn dắt người chơi tiến gần hơn tới thông điệp cuối cùng của ánh trăng. Trò chơi vừa rèn luyện tư duy toán học – ngôn ngữ, vừa mang lại sự hứng thú cao đối với lĩnh vực toán học.
+3. Bối cảnh trò chơi
+Mỗi năm, vào đêm Trung thu trăng rằm sáng tỏ, chị Hằng Nga lại ghé xuống trần gian để thăm và vui chơi cùng các bé thiếu nhi. Thế nhưng, năm nay, các em chờ mãi mà vẫn không thấy chị đâu. Trên cung trăng, chị Hằng và chú Cuội vốn có một lời hẹn: họ sẽ cùng nhau đi dạo khắp nơi, ngắm cảnh đẹp và khám phá những miền đất mới. Vì vậy, chị Hằng đã cùng chú Cuội lên đường du ngoạn, để lại mặt trăng trống trải hơn mọi khi.
+
+
+Dẫu vậy, chị Hằng không muốn các bé buồn bã, nên trước khi đi, chị đã để lại những mảnh giấy nhỏ lung linh rơi xuống trần gian. Mỗi mảnh giấy chứa một bài toán, một câu đố, như những manh mối dẫn đường. Nếu các bé cùng nhau giải được, sẽ biết được nơi chị Hằng và chú Cuội đang vui chơi.
+Từ đó, đêm Trung thu năm nay bỗng trở thành một hành trình kỳ thú: dưới ánh trăng sáng, các bé quây quần bên nhau, vừa rước đèn, vừa cùng nhau suy nghĩ, giải từng bài toán mà chị Hằng để lại. Mỗi đáp án hé mở thêm một bí mật, từng bước đưa các em đến gần hơn với “nơi hẹn ước” của chị Hằng và chú Cuội.
+
+
+Cứ thế, Trung thu năm nay không còn là sự mong chờ thụ động, mà biến thành một chuyến phiêu lưu trí tuệ đầy ắp tiếng cười, sự đoàn kết và niềm vui khám phá.
+4. Giải thích luật chơi
+1. Cấu trúc trò chơi
+
+
+Trò chơi gồm 4 câu đố (chia thành 4 phần/section).
+Người chơi chỉ có thể đi tiếp sang câu tiếp theo nếu trả lời đúng câu trước
+2. Thu thập chữ cái
+Mỗi câu đố khi trả lời đúng sẽ mang lại 2 hoặc 3 chữ cái (có thể là nguyên âm hoặc phụ âm).
+Sau khi hoàn thành cả 4 câu, người chơi sẽ thu thập đủ các chữ cái cần thiết.
+3. Mật khẩu cuối cùng
+Khi có đủ chữ cái, người chơi sẽ sắp xếp để ghép thành mật khẩu bí mật.
+Cuối trò chơi có một ô nhập mật khẩu.
+Nếu nhập đúng “NGUYETLAU”, hệ thống sẽ hiện thông báo chúc mừng và phát thưởng cho người chơi.
+4. Điểm nhấn
+Mỗi chặng vừa thử thách tư duy vừa mở dần bí ẩn của “ánh trăng”.
+Người chơi không chỉ giải mã từng câu hỏi, mà còn cần suy luận để ghép các chữ cái thành mật khẩu cuối cùng.
+
+
+5. Ý tưởng sơ khai của trò chơi
+Giai đoạn giã bột: 
+Giai đoạn đóng gói:
+Giai đoạn vận chuyển: 
+Giai đoạn phân chia:
+6. Nội dung trò chơi
+Câu 1:
+* Thỏ ngọc ở cung trăng dự định làm hai loại bánh trung thu truyền thống để tặng cho các bạn học sinh là: bánh dẻo nhân đậu xanh và bánh nướng nhân thập cẩm. Số lượng bánh tối thiểu cần làm là 160 bánh. Thỏ ngọc đã chuẩn bị một số nguyên liệu và ước tính thời gian làm bánh. Cụ thể như sau:
+*     Vỏ bánh:
+Mỗi chiếc bánh dẻo cần 0.2 kg bột nếp.
+ Mỗi chiếc bánh nướng cần 0.1 kg bột mì.
+Thỏ ngọc có sẵn 25 kg bột nếp và 12 kg bột mì.
+*     Nhân bánh:
+ Mỗi chiếc bánh dẻo cần 0.3 kg nhân đậu xanh.
+Mỗi chiếc bánh nướng cần 0.4 kg nhân thập cẩm.
+Cửa hàng đã chuẩn bị được 39 kg nhân đậu xanh và 44 kg nhân thập cẩm.
+*   Thời gian:
+Thời gian để hoàn thành (nặn, đóng khuôn, trang trí) một chiếc bánh dẻo là 12 phút.
+Thời gian để hoàn thành một chiếc bánh nướng là 18 phút.
+Tổng thời gian dự kiến để làm bánh là 36 giờ .
+* Gọi x là số lượng bánh dẻo và y là số lượng bánh nướng mà thỏ ngọc làm ra (với x, y là các số nguyên dương ). Biết rằng với mỗi chiếc bánh dẻo thì thỏ ngọc cần tiêu tốn 40 thần lực và mỗi chiếc bánh nướng là 55 thần lực. Hãy tìm cặp (x,y) sao cho thần lực mà thỏ ngọc dùng làm bánh tiêu tốn ít nhất. ( Gợi ý: viết biểu thức tính tổng thần lực mà thỏ ngọc đã dùng)
+Đáp án
+F(x,y)= 40x+55y 
+(125,35)
+
+
+
+
+Trả lời đúng nhận được các chữ cái: au
+Câu 2:Giả sử mỗi bánh trung thu là hình trụ với bán kính đáy là r    và chiều cao là      , sao cho thể tích mỗi bánh là V    (với tổng thể tích 4 bánh bằng 1728    ,tức V = 432   ). Hộp phải chứa vừa khít 4 bánh sắp xếp theo hình thức 2x2 (hai hàng, hai cột) mà không chồng lên nhau. Chiều rộng hộp w= 2r + khoảng trống tối thiếu     (giả sử     = 0.5    để tránh va chạm), chiều dài hộp l= 4r + 2     (do sắp xếp theo chiều dài), chiều cao hộp   =   +   .Hãy tìm giá trị    và   thỏa mãn V =   =432   , đồng thời tối thiểu hóa diện tích bề mặt hộp S = 2(Iw + lh + wh) (làm tròn đến chữ số thập phân thứ 2)
+Đáp án:
+  
+)
+  
+   
+Trả lời đúng nhận được các chữ cái: ng 
+Câu 3: Sau khi đóng gói xong những chiếc bánh Trung Thu thơm ngon, chị Hằng khẽ vẫy tay gọi đến một cơn gió thần để đưa bánh xuống trần gian cho các bạn học sinh. Cơn gió ấy chuyển động thẳng đều với vận tốc không đổi. Ở thời điểm t (giờ), vị trí của cơn gió được biểu diễn bởi vectơ    (km). Khi t = 0,    = 9   −6  . Khi t = 4,    =21   +10  .
+a. Tính tốc độ của cơn gió thần.
+b. Một trường mẫu giáo nằm tại vị trí ​   = 18   + 6   (km). Tìm các giá trị của T, biết rằng tại thời điểm t = T, cơn gió thần cách ngôi trường 10 km.( Gợi ý: Chứng minh rằng    = (3t + 9)   + (4t - 6)  )
+ĐÁP ÁN:
+a. 5 km/h                    
+b. T = 1 hoặc T = 5
+Trả lời đúng nhận được được các chữ cái : ue
+Câu 4:Câu 2 Cơn gió thần sau một hành trình dài đã mang những chiếc bánh trung thu tinh xảo đến tận tay các thầy cô để phát cho thiếu nhi. Tại một ngôi trường THPT ở tỉnh Tây Ninh, lớp 10T1 có 33 học sinh. Lớp được nhận tổng cộng 76 chiếc bánh trung thu, gồm 40 chiếc nhân sữa dừa và 36 chiếc nhân đậu xanh. Thầy chủ nhiệm quyết định chia bánh thành 2 lượt phát. Lượt thứ nhất thầy phát 40 chiếc bánh sữa dừa. Lượt thứ hai thầy phát 36 chiếc bánh đậu xanh còn lại. Hỏi có bao nhiêu cách phát số bánh để trong lượt đầu tiên, mỗi học sinh đều nhận được ít nhất 1 chiếc bánh?
+
+
+Chú ý: đáp án sẽ có dạng aCb*nCk
+
+
+Đáp án: 39C7*68C32 hoặc 39C7*68C36 hoặc 39C32*68C32 hoặc 39C32*68C36 hoặc 68C32*39C7 hoặc 68C36*39C7 hoặc 68C32*39C32 hoặc 68C36*39C32
+Trả lời đúng nhận được các chữ cái: ytl
+7. Cách xếp thành tích
+Dựa vào thời gian hoàn thành trò chơi
+8. Phát thưởng
+Dành cho những người xếp hạng 1,2 và 3
+Phần thưởng: móc khóa len hình lồng đèn

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scal                <div class="answe                <div class="answer-input">
+                    <label>Nhập                <div class="answer-input">
+                    <label>Nhập đáp án:</label>
+                    <input type="text" id="answer-4" placeholder="Ví dụ: 10C5*20C3">
+                    <button onclick="checkAnswer('4')">Kiểm Tra</button>
+                    <div id="result-4" class="result"></div>
+                </div>rị r (cm):</label>
+                    <input type="text" id="answer-2-r" placeholder="Ví dụ: 3.45">
+                    <label>Nhập giá trị h (cm):</label>
+                    <input type="text" id="answer-2-h" placeholder="Ví dụ: 4.56">
+                    <button onclick="checkAnswer('2')">Kiểm Tra</button>
+                    <div id="result-2" class="result"></div>
+                </div>>
+                    <label>Nhập đáp án (dạng: x,y):</label>
+                    <input type="text" id="answer-1" placeholder="Ví dụ: 10,20">
+                    <button onclick="checkAnswer('1')">Kiểm Tra</button>
+                    <div id="result-1" class="result"></div>
+                </div>>
+    <title>Mật Thư Ánh Trăng</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="moon"></div>
+    
+    <!-- Admin Button (hidden, press Ctrl+Shift+A to show) -->
+    <div id="admin-panel" class="admin-panel" style="display: none;">
+        <button onclick="exportAllPlayersData()" class="btn-admin">📊 Xuất Dữ Liệu Tất Cả Người Chơi</button>
+        <button onclick="viewPlayersData()" class="btn-admin">👁️ Xem Dữ Liệu</button>
+        <button onclick="clearPlayersData()" class="btn-admin">🗑️ Xóa Dữ Liệu</button>
+        <button onclick="toggleAdminPanel()" class="btn-admin btn-close">✕</button>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>🌙 MẬT THƯ ÁNH TRĂNG 🌙</h1>
+            <p class="subtitle">Hành trình giải mã bí ẩn của Chị Hằng và Chú Cuội</p>
+        </header>
+
+        <!-- Player Info Section -->
+        <div id="player-info-section" class="section active">
+            <div class="story-box">
+                <h2>👤 Thông Tin Người Chơi 👤</h2>
+                <p>Trước khi bắt đầu hành trình, hãy cho chúng tôi biết về bạn nhé!</p>
+                
+                <!-- Important Notice -->
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px; border-radius: 10px; margin: 20px 0; border-left: 5px solid #ffd700; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
+                    <p style="margin: 0; color: #ffffff; font-size: 15px; line-height: 1.6;">
+                        <strong style="color: #ffd700;">⚠️ LƯU Ý QUAN TRỌNG:</strong><br>
+                        <span style="color: #e0e0e0;">📱 Tiến độ chơi được lưu trên <strong style="color: #ffd700;">thiết bị này</strong>.</span><br>
+                        <span style="color: #e0e0e0;">🔄 Nếu bạn đăng nhập trên <strong style="color: #ffd700;">thiết bị khác</strong>, bạn sẽ phải <strong style="color: #ffd700;">chơi lại từ đầu</strong>.</span><br>
+                        <span style="color: #64ffda; font-size: 13px;">💡 Mẹo: Hãy chơi trên cùng một máy/điện thoại để có thể tiếp tục tiến độ!</span>
+                    </p>
+                </div>
+                
+                <div class="player-form">
+                    <div class="form-group">
+                        <label for="player-name">Họ và Tên: <span class="required">*</span></label>
+                        <input type="text" id="player-name" placeholder="Nhập họ và tên của bạn" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="player-email">Email/Gmail: <span class="required">*</span></label>
+                        <input type="email" id="player-email" placeholder="example@gmail.com" required>
+                    </div>
+                    
+                    <div class="form-group" id="password-group">
+                        <label for="player-password">Mật khẩu: <span class="required">*</span></label>
+                        <input type="password" id="player-password" placeholder="Nhập mật khẩu (tối thiểu 6 ký tự)" required minlength="6">
+                        <small style="color: #64ffda; font-size: 0.9em;">💡 Mật khẩu để xác thực nếu chơi lại hoặc xem kết quả cũ</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="is-student">Bạn có là học sinh trường Chuyên Trần Văn Giàu không? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="is-student" value="yes" onchange="toggleClassInput(true)"> Có
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="is-student" value="no" onchange="toggleClassInput(false)"> Không
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="class-group" style="display: none;">
+                        <label for="player-class">Lớp: <span class="required">*</span></label>
+                        <input type="text" id="player-class" placeholder="Ví dụ: 10A1, 11B2, 12C3...">
+                    </div>
+                    
+                    <div id="form-error" class="form-error"></div>
+                    
+                    <button class="btn-start" onclick="submitPlayerInfo()">Tiếp Tục</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Story Section -->
+        <div id="story-section" class="section">
+            <div class="story-box">
+                <h2>🏮 Câu Chuyện 🏮</h2>
+                <p>Mỗi năm, vào đêm Trung thu trăng rằm sáng tỏ, chị Hằng Nga lại ghé xuống trần gian để thăm và vui chơi cùng các bé thiếu nhi. Thế nhưng, năm nay, các em chờ mãi mà vẫn không thấy chị đâu.</p>
+                <p>Chị Hằng và chú Cuội đã cùng nhau lên đường du ngoạn, để lại mặt trăng trống trải. Nhưng chị không muốn các bé buồn bã, nên đã để lại những mảnh giấy lung linh chứa các câu đố.</p>
+                <p><strong>Nếu giải được tất cả các câu đố, bạn sẽ biết được nơi chị Hằng và chú Cuội đang vui chơi!</strong></p>
+                <p class="player-greeting">Chào <strong id="greeting-name"></strong>! Chúc bạn chơi vui vẻ! 🎉</p>
+                <button class="btn-start" onclick="startGame()">Bắt Đầu Hành Trình</button>
+            </div>
+        </div>
+
+        <!-- Timer and Letters Collected -->
+        <div id="game-info" class="game-info" style="display: none;">
+            <div class="timer">⏱️ Thời gian: <span id="timer">00:00:00</span></div>
+            <div class="letters-collected">
+                📜 Chữ cái đã thu thập: <span id="letters"></span>
+            </div>
+        </div>
+
+        <!-- Question 1 -->
+        <div id="question-1" class="section question-section">
+            <h2>🐰 Câu Hỏi 1: Thỏ Ngọc Làm Bánh 🥮</h2>
+            <div class="question-content">
+                <p>Thỏ ngọc ở cung trăng dự định làm hai loại bánh trung thu truyền thống để tặng cho các bạn học sinh là: bánh dẻo nhân đậu xanh và bánh nướng nhân thập cẩm. Số lượng bánh tối thiểu cần làm là 160 bánh.</p>
+                
+                <h3>📝 Nguyên liệu và thời gian:</h3>
+                <div class="info-box">
+                    <h4>Vỏ bánh:</h4>
+                    <ul>
+                        <li>Mỗi chiếc bánh dẻo cần <strong>0.2 kg</strong> bột nếp</li>
+                        <li>Mỗi chiếc bánh nướng cần <strong>0.1 kg</strong> bột mì</li>
+                        <li>Có sẵn: <strong>25 kg</strong> bột nếp và <strong>12 kg</strong> bột mì</li>
+                    </ul>
+                    
+                    <h4>Nhân bánh:</h4>
+                    <ul>
+                        <li>Mỗi chiếc bánh dẻo cần <strong>0.3 kg</strong> nhân đậu xanh</li>
+                        <li>Mỗi chiếc bánh nướng cần <strong>0.4 kg</strong> nhân thập cẩm</li>
+                        <li>Đã chuẩn bị: <strong>39 kg</strong> nhân đậu xanh và <strong>44 kg</strong> nhân thập cẩm</li>
+                    </ul>
+                    
+                    <h4>Thời gian:</h4>
+                    <ul>
+                        <li>Thời gian hoàn thành một chiếc bánh dẻo: <strong>12 phút</strong></li>
+                        <li>Thời gian hoàn thành một chiếc bánh nướng: <strong>18 phút</strong></li>
+                        <li>Tổng thời gian dự kiến: <strong>36 giờ</strong></li>
+                    </ul>
+                </div>
+                
+                <p class="question-text">Gọi <strong>x</strong> là số lượng bánh dẻo và <strong>y</strong> là số lượng bánh nướng (x, y là các số nguyên dương). Biết rằng với mỗi chiếc bánh dẻo thì thỏ ngọc cần tiêu tốn <strong>40 thần lực</strong> và mỗi chiếc bánh nướng là <strong>55 thần lực</strong>.</p>
+                
+                <p class="question-highlight">❓ Hãy tìm cặp (x,y) sao cho thần lực mà thỏ ngọc dùng làm bánh tiêu tốn ít nhất.</p>
+                <p class="hint">💡 Gợi ý: Viết biểu thức tính tổng thần lực F(x,y) = 40x + 55y</p>
+                
+                <div class="answer-input">
+                    <label>Nhập đáp án (dạng: x,y):</label>
+                    <input type="text" id="answer-1" placeholder="Ví dụ: 125,35">
+                    <button onclick="checkAnswer(1)">Kiểm Tra</button>
+                    <div id="result-1" class="result"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="question-2" class="section question-section">
+            <h2>📦 Câu Hỏi 2: Đóng Gói Bánh 📦</h2>
+            <div class="question-content">
+                <p>Giả sử mỗi bánh trung thu là hình trụ với bán kính đáy là <strong>r</strong> và chiều cao là <strong>h</strong>, sao cho thể tích mỗi bánh là V (với tổng thể tích 4 bánh bằng 1728 cm³, tức V = 432 cm³).</p>
+                
+                <div class="info-box">
+                    <h4>Yêu cầu đóng gói:</h4>
+                    <ul>
+                        <li>Hộp phải chứa vừa khít 4 bánh sắp xếp theo hình thức 2×2 (hai hàng, hai cột)</li>
+                        <li>Chiều rộng hộp: w = 2r + 0.5 (khoảng trống tối thiểu)</li>
+                        <li>Chiều dài hộp: l = 4r + 2×0.5 = 4r + 1</li>
+                        <li>Chiều cao hộp: H = h + 0.5</li>
+                    </ul>
+                </div>
+                
+                <p class="question-highlight">❓ Hãy tìm giá trị <strong>r</strong> và <strong>h</strong> thỏa mãn V = πr²h = 432 cm³, đồng thời tối thiểu hóa diện tích bề mặt hộp S = 2(lw + lh + wh)</p>
+                <p class="hint">💡 Làm tròn đến chữ số thập phân thứ 2</p>
+                
+                <div class="answer-input">
+                    <label>Nhập giá trị r (cm):</label>
+                    <input type="text" id="answer-2-r" placeholder="Ví dụ: 5.23">
+                    <label>Nhập giá trị h (cm):</label>
+                    <input type="text" id="answer-2-h" placeholder="Ví dụ: 5.00">
+                    <button onclick="checkAnswer(2)">Kiểm Tra</button>
+                    <div id="result-2" class="result"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div id="question-3" class="section question-section">
+            <h2>💨 Câu Hỏi 3: Cơn Gió Thần 💨</h2>
+            <div class="question-content">
+                <p>Sau khi đóng gói xong những chiếc bánh Trung Thu thơm ngon, chị Hằng khẽ vẫy tay gọi đến một cơn gió thần để đưa bánh xuống trần gian cho các bạn học sinh.</p>
+                
+                <div class="info-box">
+                    <h4>Thông tin chuyển động:</h4>
+                    <ul>
+                        <li>Cơn gió chuyển động thẳng đều với vận tốc không đổi</li>
+                        <li>Ở thời điểm t (giờ), vị trí của cơn gió: <strong><span style="text-decoration: overline;">r</span>(t)</strong> (km)</li>
+                        <li>Khi t = 0: <strong><span style="text-decoration: overline;">r</span> = 9<span style="text-decoration: overline;">i</span> - 6<span style="text-decoration: overline;">j</span></strong></li>
+                        <li>Khi t = 4: <strong><span style="text-decoration: overline;">r</span> = 21<span style="text-decoration: overline;">i</span> + 10<span style="text-decoration: overline;">j</span></strong></li>
+                        <li>Trường mẫu giáo ở vị trí: <strong>M = 18<span style="text-decoration: overline;">i</span> + 6<span style="text-decoration: overline;">j</span></strong> (km)</li>
+                    </ul>
+                </div>
+                
+                <p class="question-highlight">❓ Câu a: Tính tốc độ của cơn gió thần (km/h)</p>
+                <p class="hint">💡 Gợi ý: <span style="text-decoration: overline;">r</span>(t) = (3t + 9)<span style="text-decoration: overline;">i</span> + (4t - 6)<span style="text-decoration: overline;">j</span></p>
+                
+                <div class="answer-input">
+                    <label>Nhập tốc độ (km/h):</label>
+                    <input type="text" id="answer-3-a" placeholder="Ví dụ: 10">
+                    <button onclick="checkAnswer('3a')">Kiểm Tra Câu a</button>
+                    <div id="result-3-a" class="result"></div>
+                </div>
+                
+                <p class="question-highlight" style="margin-top: 20px;">❓ Câu b: Tìm các giá trị của T, biết rằng tại thời điểm t = T, cơn gió thần cách ngôi trường 10 km</p>
+                
+                <div class="answer-input">
+                    <label>Nhập giá trị T (dạng: T1,T2 hoặc T nếu chỉ có 1 giá trị):</label>
+                    <input type="text" id="answer-3-b" placeholder="Ví dụ: 2,6">
+                    <button onclick="checkAnswer('3b')">Kiểm Tra Câu b</button>
+                    <div id="result-3-b" class="result"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div id="question-4" class="section question-section">
+            <h2>🎁 Câu Hỏi 4: Phân Chia Bánh 🎁</h2>
+            <div class="question-content">
+                <p>Cơn gió thần sau một hành trình dài đã mang những chiếc bánh trung thu tinh xảo đến tận tay các thầy cô để phát cho thiếu nhi.</p>
+                
+                <div class="info-box">
+                    <h4>Thông tin:</h4>
+                    <ul>
+                        <li>Lớp 10T1 có <strong>33 học sinh</strong></li>
+                        <li>Tổng cộng nhận được <strong>76 chiếc bánh</strong>: 40 chiếc nhân sữa dừa và 36 chiếc nhân đậu xanh</li>
+                        <li>Lượt 1: Phát 40 chiếc bánh sữa dừa</li>
+                        <li>Lượt 2: Phát 36 chiếc bánh đậu xanh</li>
+                    </ul>
+                </div>
+                
+                <p class="question-highlight">❓ Hỏi có bao nhiêu cách phát số bánh để trong lượt đầu tiên, mỗi học sinh đều nhận được ít nhất 1 chiếc bánh?</p>
+                <p class="hint">💡 Chú ý: Đáp án sẽ có dạng aCb*nCk (ví dụ: 39C7*68C32)</p>
+                
+                <div class="answer-input">
+                    <label>Nhập đáp án:</label>
+                    <input type="text" id="answer-4" placeholder="Ví dụ: 39C7*68C32">
+                    <button onclick="checkAnswer(4)">Kiểm Tra</button>
+                    <div id="result-4" class="result"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Password Section -->
+        <div id="final-section" class="section question-section">
+            <h2>🔐 Mật Khẩu Bí Mật 🔐</h2>
+            <div class="question-content">
+                <div class="final-box">
+                    <p>Chúc mừng bạn đã thu thập đủ các chữ cái!</p>
+                    <div class="collected-letters-display">
+                        <h3>Các chữ cái bạn đã có:</h3>
+                        <div id="final-letters" class="big-letters"></div>
+                    </div>
+                    
+                    <p class="question-highlight">❓ Hãy sắp xếp các chữ cái trên thành mật khẩu để khám phá nơi chị Hằng và chú Cuội đang vui chơi!</p>
+                    <p class="hint">💡 Gợi ý: Đó là tên một địa danh nổi tiếng liên quan đến mặt trăng...</p>
+                    
+                    <div class="answer-input">
+                        <label>Nhập mật khẩu (không dấu, viết hoa):</label>
+                        <input type="text" id="final-password" placeholder="Nhập mật khẩu">
+                        <button onclick="checkFinalPassword()">Mở Khóa</button>
+                        <div id="result-final" class="result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="success-modal" class="modal">
+            <div class="modal-content">
+                <h2>🎉 CHÚC MỪNG! 🎉</h2>
+                <div class="success-message">
+                    <p>Chúc mừng <strong id="winner-name"></strong>!</p>
+                    <p>Bạn đã giải mã thành công mật thư ánh trăng!</p>
+                    <p class="reveal"><strong>NGUYỆT LẦU</strong> - Nơi Chị Hằng và Chú Cuội đang vui chơi!</p>
+                    <div class="celebration">🌙✨🏮✨🌙</div>
+                    <p>Thời gian hoàn thành: <span id="final-time"></span></p>
+                    <p class="gift-info">🎁 Phần thưởng: Móc khóa len hình lồng đèn 🏮</p>
+                    <div id="player-summary" class="player-summary"></div>
+                </div>
+                <button onclick="closeModal()">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

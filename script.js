@@ -33,7 +33,7 @@ let gameState = {
 // Correct answers
 const correctAnswers = {
     q1: { x: 125, y: 35 },
-    q2: { r: 4.25, h: 8.11, tolerance: 0.1 }, // Allow some tolerance
+    q2: 9.4, // Lợi nhuận max (nghìn đồng), tolerance ±0.1
     q3a: 5,
     q3b: [1, 5],
     q4: [
@@ -497,30 +497,27 @@ function checkAnswer(questionNum) {
         }
     }
     else if (questionNum === 2) {
-        const rInput = document.getElementById('answer-2-r');
-        const hInput = document.getElementById('answer-2-h');
+        const answerInput = document.getElementById('answer-2');
         
-        if (!rInput || !hInput) {
+        if (!answerInput) {
             console.error('Input not found for question 2');
             return;
         }
         
-        const rValue = rInput.value.trim();
-        const hValue = hInput.value.trim();
+        const answerValue = answerInput.value.trim();
         
-        if (!rValue || !hValue) {
-            showIncorrectResult(resultDiv, '⚠️ Vui lòng nhập cả r và h!');
+        if (!answerValue) {
+            showIncorrectResult(resultDiv, '⚠️ Vui lòng nhập đáp án!');
             return;
         }
         
-        const r = parseFloat(rValue);
-        const h = parseFloat(hValue);
+        const answer = parseFloat(answerValue);
         
-        // Check if values are close enough to correct answer
-        const rCorrect = Math.abs(r - correctAnswers.q2.r) <= correctAnswers.q2.tolerance;
-        const hCorrect = Math.abs(h - correctAnswers.q2.h) <= correctAnswers.q2.tolerance;
+        // Check if value is close enough to correct answer (tolerance ±0.1)
+        const tolerance = 0.1;
+        const isCorrect = Math.abs(answer - correctAnswers.q2) <= tolerance;
         
-        if (rCorrect && hCorrect) {
+        if (isCorrect) {
             showCorrectResult(resultDiv, 'q2', 2);
         } else {
             showIncorrectResult(resultDiv);

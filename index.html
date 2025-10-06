@@ -147,29 +147,42 @@
 
         <!-- Question 2 -->
         <div id="question-2" class="section question-section">
-            <h2>📦 Câu Hỏi 2: Đóng Gói Bánh 📦</h2>
+            <h2>📦 Câu Hỏi 2: Thiết Kế Hộp Bánh 📦</h2>
             <div class="question-content">
-                <p>Giả sử mỗi bánh trung thu là hình trụ với bán kính đáy là <strong>r</strong> và chiều cao là <strong>h</strong>, sao cho thể tích mỗi bánh là V (với tổng thể tích 4 bánh bằng 1728 cm³, tức V = 432 cm³).</p>
+                <p>Một công ty cần thiết kế hộp bánh trung thu để sản xuất hàng loạt.</p>
                 
                 <div class="info-box">
-                    <h4>Yêu cầu đóng gói:</h4>
+                    <h4>Cấu trúc hộp:</h4>
+                    <p>Hộp gồm ba phần: lòng hộp, vỏ hộp, và nắp hộp, đều có đáy hình vuông.</p>
                     <ul>
-                        <li>Hộp phải chứa vừa khít 4 bánh sắp xếp theo hình thức 2×2 (hai hàng, hai cột)</li>
-                        <li>Chiều rộng hộp: w = 2r + 0.5 (khoảng trống tối thiểu)</li>
-                        <li>Chiều dài hộp: l = 4r + 2×0.5 = 4r + 1</li>
-                        <li>Chiều cao hộp: H = h + 0.5</li>
+                        <li><strong>Lòng hộp:</strong> là hộp chữ nhật không nắp, đáy hình vuông, cao <strong>14 cm</strong></li>
+                        <li><strong>Vỏ hộp:</strong> sau khi trải phẳng gồm một hình vuông (đáy) và 4 mặt bên cao <strong>10 cm</strong></li>
+                        <li><strong>Nắp hộp:</strong> là hộp chữ nhật khuyết 1 đáy</li>
+                        <li>Bỏ qua độ dày bìa và khe hở khi lắp ráp</li>
+                        <li>Chiều cao tổng thể của hộp sau khi hoàn thiện: <strong>15 cm</strong></li>
+                    </ul>
+                    
+                    <h4>Thiết kế và giá cả:</h4>
+                    <ul>
+                        <li>Để tăng tính thẩm mỹ, nhà thiết kế nới rộng mỗi cạnh đáy của lòng hộp thêm <strong>2t cm</strong> để trang trí viền bên trong</li>
+                        <li>Khi đó cạnh đáy của các phần hộp đều có độ dài: <strong>S = 24 + 2t</strong> (cm)</li>
+                        <li>Giá bìa: <strong>3.5 đ/cm²</strong></li>
+                        <li>Chi phí gia công cố định: <strong>5 nghìn đồng</strong> cho mỗi hộp</li>
+                        <li>Giá bán hộp bánh (không tính giá bánh bên trong):</li>
+                        <li style="margin-left: 20px;">- Giá khởi điểm: <strong>30 nghìn đồng</strong></li>
+                        <li style="margin-left: 20px;">- Cứ mỗi 1 cm tăng thêm về kích thước lòng hộp thì giá bán tăng thêm <strong>1 nghìn đồng</strong></li>
                     </ul>
                 </div>
                 
-                <p class="question-highlight">❓ Hãy tìm giá trị <strong>r</strong> và <strong>h</strong> thỏa mãn V = πr²h = 432 cm³, đồng thời tối thiểu hóa diện tích bề mặt hộp S = 2(lw + lh + wh)</p>
-                <p class="hint">💡 Làm tròn đến chữ số thập phân thứ 2</p>
+                <p class="question-highlight">❓ Tìm giá trị lớn nhất của lợi nhuận thu được khi sản xuất và bán một hộp bánh</p>
+                <p class="hint">💡 Đơn vị: nghìn đồng, làm tròn đến hàng phần mười. Gợi ý: Tính tổng diện tích bìa cho cả 3 phần, sau đó lập hàm lợi nhuận L(t) = Doanh thu - Chi phí</p>
                 
                 <div class="answer-input">
-                    <label>Nhập giá trị r (cm):</label>
-                    <input type="text" id="answer-2-r" placeholder="Ví dụ: 3.45">
-                    <label>Nhập giá trị h (cm):</label>
-                    <input type="text" id="answer-2-h" placeholder="Ví dụ: 4.56">
+                    <label>Nhập lợi nhuận lớn nhất (nghìn đồng):</label>
+                    <input type="text" id="answer-2" placeholder="Ví dụ: 10.5">
                     <button onclick="checkAnswer('2')">Kiểm Tra</button>
+                    <div id="result-2" class="result"></div>
+                </div>
                     <div id="result-2" class="result"></div>
                 </div>
             </div>
